@@ -89,13 +89,12 @@ namespace FoodApp2
         {
             FoodAppEntities FA = new FoodAppEntities();
 
-            var r = from d in FA.Users
-                    where d.userID == this.upadatingUserID
-                    select d;
+           
 
             var user = FA.Users.FirstOrDefault(x => x.userID == ((Users)Gridusers.SelectedItem).userID);
 
-            if (user != null)
+            if (MessageBox.Show(this, "Are you sure you want update user?", "Confrimation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if (user != null)
             {
                 user.Name = this.txtName2.Text;
                 user.Surname = this.txtSurname2.Text;
@@ -103,6 +102,10 @@ namespace FoodApp2
                 user.PhoneNumber = this.txtPhoneNumber2.Text;
                 FA.SaveChanges();
             }
+                else 
+                {
+
+                }
 
 
 
@@ -118,12 +121,15 @@ namespace FoodApp2
                 var user = FA.Users.FirstOrDefault(x => x.userID == ((Users)Gridusers.SelectedItem).userID);
 
 
-
+            if (MessageBox.Show(this, "Are you sure you want delete user?", "Confrimation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 if (user != null)
                 {
 
                     FA.Users.Remove(user);
                     FA.SaveChanges();
+                }
+                else 
+                {
                 }
 
             

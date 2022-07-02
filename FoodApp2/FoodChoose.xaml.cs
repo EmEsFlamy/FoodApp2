@@ -50,5 +50,21 @@ namespace FoodApp2
                 
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+           if  (MessageBox.Show(this, "If you close this window, all data will be lost.","Confrimation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                MainWindow win2 = new MainWindow();
+                win2.Show();
+                this.Close();
+            }
+            else 
+            {
+                
+            }
+        }
     }
 }

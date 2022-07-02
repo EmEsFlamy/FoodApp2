@@ -16,8 +16,8 @@
         <Label Content="Restaurant" HorizontalAlignment="Left" Margin="64,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.641,-0.341"/>
         <Label Content="Food Type" HorizontalAlignment="Left" Margin="335,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.194,7.231"/>
         <Label Content="Food" HorizontalAlignment="Left" Margin="625,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.821,1.087"/>
-        <DataGrid x:Name="Usersgrid2" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="386" Background="#FFAC9772">
-            
+        <DataGrid x:Name="Usersgrid2" HorizontalAlignment="Left" Height="100" Margin="64,10,0,0" VerticalAlignment="Top" Width="386" Background="#FFAC9772">
+
         </DataGrid>
         <TextBox x:Name="Name2TXT" HorizontalAlignment="Left" Height="23" Margin="463,32,0,0" TextWrapping="Wrap" Text="{Binding ElementName=Usersgrid2 ,Path=SelectedItem.Name,Mode=OneWay}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <TextBox x:Name="Surname2TXT" HorizontalAlignment="Left" Height="23" Margin="463,87,0,0" TextWrapping="Wrap" Text="{Binding ElementName=Usersgrid2 ,Path=SelectedItem.Surname,Mode=OneWay}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
@@ -39,5 +39,6 @@
                 <DataGridTextColumn Header="Food" Binding="{Binding FoodName}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="0,-1,0,0" VerticalAlignment="Top" Width="54" Height="55" Click="Button_Click" Background="#FF96A0A0"/>
     </Grid>
 </Window>
