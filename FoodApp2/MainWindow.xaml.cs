@@ -41,15 +41,24 @@ namespace FoodApp2
         {
             FoodAppEntities FA = new FoodAppEntities();
 
-            Users Userobject = new Users()
+            if (txtName.Text == "" || txtSurname.Text == "" || txtAddress.Text == "" || txtPhoneNumber.Text == "")
             {
-                Name = txtName.Text,
-                Surname = txtSurname.Text,
-                Address = txtAddress.Text,
-                PhoneNumber = txtPhoneNumber.Text
-            };
-            FA.Users.Add(Userobject);
-            FA.SaveChanges();
+                MessageBox.Show(this, "refill the data", "Confrimation");
+                return;
+            }
+            else
+            {
+               
+                Users Userobject = new Users()
+                {
+                    Name = txtName.Text,
+                    Surname = txtSurname.Text,
+                    Address = txtAddress.Text,
+                    PhoneNumber = txtPhoneNumber.Text
+                };
+                FA.Users.Add(Userobject);
+                FA.SaveChanges();
+            }
         }
 
         private void btnLoadUsers_Click(object sender, RoutedEventArgs e)

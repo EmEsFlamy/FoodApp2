@@ -36,8 +36,16 @@ namespace FoodApp2
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Name2TXT.Text == "" || Surname2TXT.Text == "" || Address2TXT.Text == "" || PhoneNumber2TXT.Text == "" || RestaurantTXT.Text == "" || FoodTypeTXT.Text == "" || FoodTXT.Text == "")
+            {
 
-            OrderGrid.Items.Add(new 
+                MessageBox.Show(this, "refill the data", "Confrimation");
+                return;
+
+            }
+            else
+            {
+                OrderGrid.Items.Add(new
                 {
                     Name = Name2TXT.Text,
                     Surname = Surname2TXT.Text,
@@ -47,7 +55,7 @@ namespace FoodApp2
                     FoodTypeName = FoodTypeTXT.Text,
                     FoodName = FoodTXT.Text
                 });
-                
+            }
             
         }
 
@@ -56,7 +64,7 @@ namespace FoodApp2
             
             
            if  (MessageBox.Show(this, "If you close this window, all data will be lost.","Confrimation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
+            {
                 MainWindow win2 = new MainWindow();
                 win2.Show();
                 this.Close();
